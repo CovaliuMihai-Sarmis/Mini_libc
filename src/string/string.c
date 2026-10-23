@@ -5,7 +5,14 @@
 char *strcpy(char *destination, const char *source)
 {
 	/* TODO: Implement strcpy(). */
-	return destination;
+	char *ret = destination;
+	while(*source != '\0') {
+		*destination = *source;
+		destination++;
+		source++;
+	}
+	*destination = '\0';
+	return ret;
 }
 
 char *strncpy(char *destination, const char *source, size_t len)
