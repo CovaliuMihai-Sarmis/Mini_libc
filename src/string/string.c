@@ -5,7 +5,9 @@
 char *strcpy(char *destination, const char *source)
 {
 	/* TODO: Implement strcpy(). */
+
 	char *ret = destination;
+
 	while(*source != '\0') {
 		*destination = *source;
 		destination++;
@@ -18,13 +20,39 @@ char *strcpy(char *destination, const char *source)
 char *strncpy(char *destination, const char *source, size_t len)
 {
 	/* TODO: Implement strncpy(). */
-	return destination;
+
+	char *ret = destination;
+
+	while(len > 0 && *source != '\0') {
+		*destination = *source;
+		destination++;
+		source++;
+		len--;
+	}
+	while( len > 0){
+		*destination = '\0';
+		destination++;
+		len--;
+	}
+	return ret;
 }
 
 char *strcat(char *destination, const char *source)
 {
 	/* TODO: Implement strcat(). */
-	return destination;
+
+	char *ret = destination;
+	while(*destination != '\0') {
+		destination++;
+	}
+	while(*source != '\0') {
+		*destination = *source;
+		destination++;
+		source++;
+	}
+	*destination = '\0';
+
+	return ret;
 }
 
 char *strncat(char *destination, const char *source, size_t len)
