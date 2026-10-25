@@ -4,7 +4,8 @@
 #include <string.h>
 #include <internal/io.h>
 
-int puts(char* str){
+int puts(const char* str)
+{
 	size_t len = strlen(str);
 	ssize_t ret1 = write(1, str, len);
 	if(ret1 < 0) {
